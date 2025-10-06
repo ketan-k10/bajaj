@@ -1,0 +1,17 @@
+server:
+  port: 8080
+
+app:
+  # The client (startup runner) will POST to this URL to receive webhook details.
+  # For testing in the same application, leave as localhost:8080 endpoint.
+  generateWebhookUrl: "http://localhost:8080/hiring/generateWebhook/JAVA"
+
+  # Put your final SQL query here (or set a finalQueryFilePath)
+  finalQuery: "SELECT * FROM users WHERE id = 1;"
+  # finalQueryFilePath: "/absolute/path/to/query.sql"
+
+  # JWT secret (must match server secret used by controller). Change for production.
+  jwtSecret: "very-strong-secret-change-me"
+
+  # Authorization header prefix (empty means Authorization: <token>)
+  authHeaderPrefix: ""
